@@ -1,0 +1,48 @@
+{
+  "device": "Device14-2",
+  "stack": "Ni/AlOx/TiOx/Ti",
+  "notes": "Calibrated from pulses on 2026-10-16. Positive SET, negative RESET, always with a 10 kOhm series resistor. SET +2.0 V / 0.5 s lands at ~32 kOhm and holds; RESET acts from about -1.7 V at 0.2 s (~5%/pulse at -1.8 V, uneven). Deep RESET (-2.0 V repeated) made SET fade in sweeps, so keep v_reset_max at 2.0 and do not raise it. Lift the probes before touching any cable; R below ~15 kOhm means a short or probe problem.",
+  "measured": {
+    "forming": "IV_sweep/V-1.4_1.4_..._RS10k_20261016_154028: abrupt SET on + branch at +1.26-1.29 V applied (device 0.87 V), 204 -> 64 kOhm, current capped at ~78 uA by the resistor",
+    "sweeps_balanced": "IV_sweep/V-1.7_1.8_cyc3_..._RS10k_20261016_154450: SET +1.8 V -> 44.6-46.3 kOhm every cycle; RESET -1.7 V -> 66-79 kOhm; stable",
+    "sweeps_strong_reset": "IV_sweep/V-2.0_1.8_cyc3_..._RS10k_20261016_154654: RESET -2.0 V -> 105-122 kOhm, but LRS crept up 47.6 -> 59.6 -> 69.0 kOhm",
+    "sweeps_weak_set": "IV_sweep/V-2.0_1.4_cyc3_..._RS10k_20261016_154235: SET +1.4 V faded after RESET to ~170 kOhm",
+    "usable_target_range_Ohm": [
+      40000,
+      95000
+    ],
+    "set_pulse": "Pulse_Modulation/..._N1x0_..._RS10k_20261016_154949: +2.0 V / 0.5 s, 113 -> 32.0 kOhm; held 31.8-32.5 kOhm over 120 s (Retention_Unbiased/..._154956)",
+    "reset_staircase": "Pulse_Modulation/..._N0x15_..._RS10k_20261016_155217: 15 x (-1.8 V / 0.2 s), 32 -> 70-73 kOhm, ~5%/pulse, uneven (one +21% step)",
+    "first_tune": "Resistance_Tune/Device14-2_T80k_..._20261016_155351: 80 kOhm reached at 78.6 kOhm (-1.7%) with 1 SET + 38 RESET (ISPP -1.50 -> -1.88 V), 104 s; held +0.8% over 60 s",
+    "ten_level_tune": "Resistance_Tune/Device14-2_T60-110k_x10_..._20261016_155551: 8/10 reached (60-96 kOhm) within +/-3%, errors -2.6..+1.4%, all 8 held 60 s within 1.4%; 102.8 and 110 kOhm not reached: R saturated at ~88-94 kOhm at -2.0 V / 0.2 s",
+    "repeatability_tune": "Resistance_Tune/Device14-2_T40-95k_x24_shuffled_2rounds_..._20261016_161040: 17/24 reached (err mean -0.2%, max 2.9%); 40-65 kOhm 14/14; 69-95 kOhm 3/10, all failures in round 2 as the RESET ceiling fell 93 -> 66-77 kOhm and single-SET level rose 46 -> 56-60 kOhm",
+    "endurance": "Pulse_Modulation/Device14-2_..._N1x10_cyc100_RS10k_20261016_162523: window 1.13x at cycle 1, ~1.0-1.2x by cycle 5-30 (LRS 41->72 kOhm, HRS 46->79 kOhm); sudden drops on RESET (-2.0 V) pulses at cycles 31, 32, 56 and 73; permanent ohmic short 0.92 kOhm from cycle 73 (pulse ~801 of the block, ~1350 total)"
+  },
+  "params": {
+    "tol": 0.03,
+    "v_read": 0.1,
+    "icc": 0.0001,
+    "v_set": 2.0,
+    "t_set": 0.5,
+    "set_map": "1.5e-4:32e3",
+    "set_spread": 0.15,
+    "v_reset_start": 1.7,
+    "v_reset_step": 0.02,
+    "v_reset_max": 2.0,
+    "t_reset": 0.2,
+    "icc_reset": 0.00015,
+    "min_change": 0.02,
+    "max_pulses": 100,
+    "max_sets": 10,
+    "max_stalls": 6,
+    "r_floor": 15000.0,
+    "verify_delay": 2.0,
+    "t_relax": 1.0,
+    "n_read_avg": 10,
+    "read_settle": 0.02,
+    "nplc": 1.0,
+    "pulse_mode": "software",
+    "r_series": 10000.0
+  },
+  "status": "DEAD (shorted ~0.92 kOhm) on 2026-10-16 after ~1350 write pulses"
+}

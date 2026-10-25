@@ -1,0 +1,34 @@
+{
+  "device": "NiAlOxTiOx",
+  "stack": "Ni/AlOx/TiOx/Ti (T7, Device 3-1)",
+  "notes": "Recipe that tuned 12/15/25/28 kOhm within +/-5% on 2026-09-24. On 2026-10-07 the device read 0.4-1 kOhm (ohmic) after 800 uA positive pulses and could not be reset; kept for reference only.",
+  "measured": {
+    "set_map_source": "Pulse_Modulation/..._20260924_171140 (200 uA: 15.8-18.9 kOhm) and _171212 (300 uA: 6.5-9.4 kOhm)",
+    "tuning_runs": "Resistance_Tune/NiAlOxTiOx_T12k_25k_tol5pct_20260924_172005, NiAlOxTiOx_T15k_28k_tol5pct_20260924_172542",
+    "usable_target_range_Ohm": [10000, 30000]
+  },
+  "params": {
+    "tol": 0.05,
+    "v_read": 0.1,
+    "icc": 0.0003,
+    "v_set": -1.0,
+    "t_set": 0.5,
+    "set_map": "3e-4:7.9e3,2e-4:17.7e3",
+    "set_spread": 0.15,
+    "v_reset_start": 0.75,
+    "v_reset_step": 0.01,
+    "v_reset_max": 0.9,
+    "t_reset": 0.02,
+    "icc_reset": 0.0008,
+    "min_change": 0.02,
+    "max_pulses": 60,
+    "max_sets": 6,
+    "r_floor": 1000.0,
+    "verify_delay": 2.0,
+    "t_relax": 0.1,
+    "n_read_avg": 10,
+    "read_settle": 0.02,
+    "nplc": 1.0,
+    "pulse_mode": "software"
+  }
+}

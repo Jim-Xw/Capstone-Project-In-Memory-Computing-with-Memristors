@@ -1,0 +1,38 @@
+{
+  "device": "Device13-1",
+  "stack": "Ni/AlOx/TiOx/Ti",
+  "notes": "Positive SET, negative RESET (current wiring), always with a 10 kOhm series resistor. SET is a single step to the bottom of the range (~64-74 kOhm); RESET is a repeatable staircase of ~4% per -2.0 V / 0.5 s pulse. Applied voltages are at the 2 V safety cap, so RESET uses a fixed amplitude (start = max) and only the pulse count varies. Lift the probes before touching any cable; check R before each run (abnormal if below ~20 kOhm).",
+  "measured": {
+    "iv_sweeps": "IV_sweep/V-2.0_2.0_cyc3_..._RS10k_20261016_114606: + lowers R, - raises R; RESET current drop at -1.8..-2.0 V applied (~-1.4 V on device); 3 cycles consistent",
+    "set_pulse": "Pulse_Modulation/..._RS10k_20261016_120231 and _131112: +2.0 V / 0.5 s -> 74 kOhm and 64 kOhm; 0.1 s SET pulses gave a volatile state that broke after ~7 s",
+    "reset_staircase": "Pulse_Modulation/..._N0x20_..._RS10k_20261016_131018: 20 x (-2.0 V / 0.5 s) took 58 -> 124 kOhm, ~4% per pulse; 0.1 s RESET pulses had no effect",
+    "holds": "Retention_Unbiased/..._RS10k_20261016_122149 (90.9 -> 90.6 kOhm over 120 s) and _131117 (63.6 -> 64.1 kOhm over 1 h); one earlier low-state hold jumped 69 -> 53 kOhm after ~21 min",
+    "usable_target_range_Ohm": [75000, 125000]
+  },
+  "params": {
+    "tol": 0.02,
+    "v_read": 0.1,
+    "icc": 0.0001,
+    "v_set": 2.0,
+    "t_set": 0.5,
+    "set_map": "1.5e-4:66e3",
+    "set_spread": 0.12,
+    "v_reset_start": 2.0,
+    "v_reset_step": 0.01,
+    "v_reset_max": 2.0,
+    "t_reset": 0.5,
+    "icc_reset": 0.00015,
+    "min_change": 0.02,
+    "max_pulses": 150,
+    "max_sets": 10,
+    "max_stalls": 8,
+    "r_floor": 20000.0,
+    "verify_delay": 2.0,
+    "t_relax": 1.0,
+    "n_read_avg": 10,
+    "read_settle": 0.02,
+    "nplc": 1.0,
+    "pulse_mode": "software",
+    "r_series": 10000.0
+  }
+}

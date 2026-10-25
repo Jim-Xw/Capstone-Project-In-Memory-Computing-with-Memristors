@@ -1,0 +1,7 @@
+matplotlib
+numpy
+pandas
+pyvisa
+pyvisa-py
+pyusb
+

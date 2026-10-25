@@ -1,0 +1,36 @@
+{
+  "device": "Device6-1",
+  "stack": "Ni/AlOx/TiOx/Ti",
+  "notes": "Negative SET, positive RESET. Starting recipe from 2026-10-08 calibration; refine set_map after the 200 uA SET test and v_reset_start after the first tuning run.",
+  "measured": {
+    "dc_sweep": "IV_sweep/V-1.1_1.0_cyc3_pts100_SET300uA_RST800uA_NPLC0.5_20261008_131344: SET abrupt at -0.86 to -0.88 V; RESET current falls from +0.58 to +0.77 V and continues to +1.0 V; peak RESET current 240-340 uA",
+    "reset_pulse": "Pulse_Modulation/Device66-1_..._20261008_132031: +1.0 V / 0.1 s took 10.8 -> 86.5 kOhm on the first pulse",
+    "set_pulse": "Pulse_Modulation/Device6-1_..._20261008_132216: -1.0 V / 0.1 s / 300 uA took 115 -> 12.0 kOhm",
+    "cycling": "Pulse_Modulation/Device6-1_..._20261008_132312: 5 cycles, LRS 8.2-10.2 kOhm (mean 9.1), HRS 62-76 kOhm (mean 69)",
+    "usable_target_range_Ohm": [11000, 60000]
+  },
+  "params": {
+    "tol": 0.05,
+    "v_read": 0.1,
+    "icc": 0.0003,
+    "v_set": -1.0,
+    "t_set": 0.1,
+    "set_map": "3e-4:9.1e3",
+    "set_spread": 0.15,
+    "v_reset_start": 0.65,
+    "v_reset_step": 0.01,
+    "v_reset_max": 1.0,
+    "t_reset": 0.02,
+    "icc_reset": 0.0008,
+    "min_change": 0.02,
+    "max_pulses": 80,
+    "max_sets": 6,
+    "r_floor": 1000.0,
+    "verify_delay": 2.0,
+    "t_relax": 0.1,
+    "n_read_avg": 10,
+    "read_settle": 0.02,
+    "nplc": 1.0,
+    "pulse_mode": "software"
+  }
+}
